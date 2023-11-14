@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">SwitchCaseApp</string>
-    <string name="text_field_label">Enter Something</string>
-    <string name="title_activity_second">SecondActivity</string>
+    <string name="app_name">PlayProdigy</string>
+    <string name="loading">Loading</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sing_up">Sign Up</string>
+    <string name="don_t_have_account_create_here">Don\'t have account? create here!!</string>
+    <string name="or_login_account">or Login Account</string>
+    <string name="dashboard_under_development">Dashboard under development</string>
+    <string name="signout">Sign Out</string>
+    <string name="search_song">Search Song</string>
 </resources>

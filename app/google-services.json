@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "750876343027",
+    "project_id": "playprodigy-b823e",
+    "storage_bucket": "playprodigy-b823e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750876343027:android:272f51c38990a699cc9586",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.mad.W9620754"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGjr10OG-Qll788dvyokxvalKyjwN6yJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

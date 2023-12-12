@@ -22,7 +22,8 @@ class Login : AppCompatActivity() {
 
         if(authenticationFirebase.currentUser != null)
         {
-            startActivity(Intent(this,MainScreen::class.java))
+            startActivity(Intent(this,AllFeatures::class.java))
+            finish()
         }
 
         findViewById<TextView>(R.id.create_acc_text).setOnClickListener{
@@ -35,7 +36,7 @@ class Login : AppCompatActivity() {
             authenticationFirebase.signInWithEmailAndPassword(emaill,password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                      startActivity(Intent(this,MainScreen::class.java))
+                      startActivity(Intent(this,AllFeatures::class.java))
                         Toast.makeText(this,"Login Success",Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this,"Unable to Login",Toast.LENGTH_SHORT).show()

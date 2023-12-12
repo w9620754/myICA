@@ -5,6 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.TextView
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.delay
+
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.material3.Text
 
 class splashScreenActivity : AppCompatActivity() {
 
@@ -13,22 +26,46 @@ class splashScreenActivity : AppCompatActivity() {
     private lateinit var text:TextView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_screen)
-        text =  findViewById<TextView>(R.id.loading)
-        loader()
-
+        setContent {
+            SplashScreen()
+        }
     }
-    private fun loader()
-    {
-        Handler().postDelayed({
-            if(count<2000) {
-                loader()
-            }else{
-                startActivity(Intent(this,Login::class.java))
+
+
+    @Composable
+    fun SplashScreen() {
+        var textLoader by remember { mutableStateOf("Loading") }
+        var count by remember { mutableStateOf(0) }
+
+        LaunchedEffect(key1 = count) {
+            delay(300)
+            if (count < 2000) {
+                textLoader += "."
+                count += 300
+            } else {
+                startActivity(Intent(applicationContext,Login::class.java))
             }
-            count += 300;
-            textloder += "."
-            text.text = textloder
-        }, 300)
+        }
+
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.playprodigy),
+                contentDescription = "App Logo",
+                modifier = Modifier.size(100.dp)
+            )
+
+            // Text for loading
+            Spacer(modifier = Modifier.height(20.dp))
+            Text(
+                text = textLoader,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
     }
 }

@@ -17,6 +17,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.3"
+    }
 
     buildTypes {
         release {
@@ -49,8 +55,36 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("com.google.android.gms:play-services-maps:17.0.1")
+    implementation("com.google.android.gms:play-services-location:18.0.0")
     implementation("com.google.android.material:material:1.4.0")
     implementation("com.android.volley:volley:1.2.1")
+    implementation("com.google.code.gson:gson:2.8.6")
+
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    implementation("com.google.android.material:material")
+
+    implementation("com.google.android.exoplayer:exoplayer:2.19.1")
+
+
+    val composeBom = platform("androidx.compose:compose-bom:2023.10.01")
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+
+    implementation("androidx.compose.material3:material3")
+
+    implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("androidx.activity:activity-compose:1.8.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation("io.coil-kt:coil-compose:1.4.0")
+    implementation("androidx.biometric:biometric:1.1.0")
 
 
 

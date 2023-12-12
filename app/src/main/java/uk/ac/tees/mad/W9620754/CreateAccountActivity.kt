@@ -22,6 +22,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.login_acc_text).setOnClickListener{
             startActivity(Intent(this,Login::class.java))
+            finish()
         }
 
         findViewById<Button>(R.id.sigup_button).setOnClickListener{
